@@ -24,7 +24,8 @@
     
     // Put the view inside a scroll view and add that scroll view to
     // the window
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:wholeWindow];    [[self window] addSubview:scrollView];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:wholeWindow];
+    [[self window] addSubview:scrollView];
     
     // Make the view twice as large as the window
     CGRect reallyBigRect;
@@ -39,16 +40,15 @@
     offset.y = wholeWindow.size.height * 0.5;
     [scrollView setContentOffset:offset];
     
+    // Enable zooming
+    //[scrollView setMinimumZoomScale:0.5];
+    //[scrollView setMaximumZoomScale:5];
+    //[scrollView setDelegate:self];
+    
     // Create the view
-    // Create an instance of HypnosisView that is the same size as the window
     //view = [[HypnosisView alloc] initWithFrame:wholeWindow];
-    //view = [[HypnosisView alloc] initWithFrame:reallyBigRect];
-    
-    // Set the background color of that view to "clear"
+    view = [[HypnosisView alloc] initWithFrame:reallyBigRect];
     [view setBackgroundColor:[UIColor clearColor]];
-    
-    // Add the view to the view hierarchy so that it appears on the window
-    //[[self window] addSubview:view];
     [scrollView addSubview:view];
     
     return YES;
@@ -79,6 +79,11 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return view;
 }
 
 @end
