@@ -8,6 +8,8 @@
 
 #import "HypnoAppDelegate.h"
 
+#import "HypnosisView.h"
+
 @implementation HypnoAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -16,6 +18,19 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    // Make a CGRect that is the size of the window
+    CGRect wholeWindow = [[self window] bounds];
+    
+    // Create an instance of HypnosisView that is the same size as the window
+    view = [[HypnosisView alloc] initWithFrame:wholeWindow];
+    
+    // Set the background color of that view to "clear"
+    [view setBackgroundColor:[UIColor clearColor]];
+    
+    // Add the view to the view hierarchy so that it appears on the window
+    [[self window] addSubview:view];
+    
     return YES;
 }
 

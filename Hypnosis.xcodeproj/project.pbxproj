@@ -16,6 +16,7 @@
 		1BB7D4CE16B5905500ABFCFE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB7D4CD16B5905500ABFCFE /* Default.png */; };
 		1BB7D4D016B5905500ABFCFE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB7D4CF16B5905500ABFCFE /* Default@2x.png */; };
 		1BB7D4D216B5905500ABFCFE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB7D4D116B5905500ABFCFE /* Default-568h@2x.png */; };
+		1BB7D4DA16B5908100ABFCFE /* HypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB7D4D916B5908100ABFCFE /* HypnosisView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		1BB7D4CD16B5905500ABFCFE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1BB7D4CF16B5905500ABFCFE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1BB7D4D116B5905500ABFCFE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1BB7D4D816B5908100ABFCFE /* HypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypnosisView.h; sourceTree = "<group>"; };
+		1BB7D4D916B5908100ABFCFE /* HypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypnosisView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				1BB7D4CA16B5905400ABFCFE /* HypnoAppDelegate.h */,
 				1BB7D4CB16B5905400ABFCFE /* HypnoAppDelegate.m */,
 				1BB7D4C216B5905400ABFCFE /* Supporting Files */,
+				1BB7D4D816B5908100ABFCFE /* HypnosisView.h */,
+				1BB7D4D916B5908100ABFCFE /* HypnosisView.m */,
 			);
 			path = Hypnosis;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 			files = (
 				1BB7D4C816B5905400ABFCFE /* main.m in Sources */,
 				1BB7D4CC16B5905500ABFCFE /* HypnoAppDelegate.m in Sources */,
+				1BB7D4DA16B5908100ABFCFE /* HypnosisView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

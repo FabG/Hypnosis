@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+// "forward declaration"
+@class HypnosisView;
+
 @interface HypnoAppDelegate : UIResponder <UIApplicationDelegate>
+{
+    HypnosisView *view;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
