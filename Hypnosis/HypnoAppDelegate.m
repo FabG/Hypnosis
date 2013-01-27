@@ -22,14 +22,34 @@
     // Make a CGRect that is the size of the window
     CGRect wholeWindow = [[self window] bounds];
     
+    // Put the view inside a scroll view and add that scroll view to
+    // the window
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:wholeWindow];    [[self window] addSubview:scrollView];
+    
+    // Make the view twice as large as the window
+    CGRect reallyBigRect;
+    reallyBigRect.origin = CGPointZero;
+    reallyBigRect.size.width = wholeWindow.size.width * 2.0;
+    reallyBigRect.size.height = wholeWindow.size.height * 2.0;
+    [scrollView setContentSize:reallyBigRect.size];
+    
+    // Center it in the scroll view
+    CGPoint offset;
+    offset.x = wholeWindow.size.width * 0.5;
+    offset.y = wholeWindow.size.height * 0.5;
+    [scrollView setContentOffset:offset];
+    
+    // Create the view
     // Create an instance of HypnosisView that is the same size as the window
-    view = [[HypnosisView alloc] initWithFrame:wholeWindow];
+    //view = [[HypnosisView alloc] initWithFrame:wholeWindow];
+    //view = [[HypnosisView alloc] initWithFrame:reallyBigRect];
     
     // Set the background color of that view to "clear"
     [view setBackgroundColor:[UIColor clearColor]];
     
     // Add the view to the view hierarchy so that it appears on the window
-    [[self window] addSubview:view];
+    //[[self window] addSubview:view];
+    [scrollView addSubview:view];
     
     return YES;
 }
