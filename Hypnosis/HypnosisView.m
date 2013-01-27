@@ -40,6 +40,32 @@
                         currentRadius, 0.0, M_PI * 2.0, YES);
         CGContextStrokePath(context);
     }
+    
+    // Add some text on top of the citrcles with a shadow
+    NSString *text = @"You are getting sleepy...";
+    
+    // Get a font to draw in it
+    UIFont *font = [UIFont boldSystemFontOfSize:28];
+    
+    // Draw in the center of the rectangle
+    CGRect textRect;
+    textRect.size = [text sizeWithFont:font];
+    textRect.origin.x = center.x - textRect.size.width / 2.0;
+    textRect.origin.y = center.y - textRect.size.height / 2.0;
+    
+    // Set the fill color of the current contect to black
+    [[UIColor blackColor] setFill];
+    
+    // Set the shadow to be offset 4 points right, 3 points down,
+    // dark gray and with a blur radius of 2 points
+    CGSize offset = CGSizeMake(4, 3);
+    CGColorRef color = [[UIColor darkGrayColor] CGColor];
+    CGContextSetShadowWithColor(context, offset, 2.0, color);
+    
+    // Draw the string
+    [text drawInRect:textRect
+            withFont:font];
+    
 }
 
 @end
