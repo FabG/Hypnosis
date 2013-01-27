@@ -11,7 +11,7 @@
 // "forward declaration"
 @class HypnosisView;
 
-@interface HypnoAppDelegate : UIResponder <UIApplicationDelegate>
+@interface HypnoAppDelegate : UIResponder <UIApplicationDelegate,UIScrollViewDelegate>
 {
     HypnosisView *view;
 }

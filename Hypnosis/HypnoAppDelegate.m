@@ -41,15 +41,21 @@
     [scrollView setContentOffset:offset];
     
     // Enable zooming
-    //[scrollView setMinimumZoomScale:0.5];
-    //[scrollView setMaximumZoomScale:5];
-    //[scrollView setDelegate:self];
+    [scrollView setMinimumZoomScale:0.5];
+    [scrollView setMaximumZoomScale:8];
+    [scrollView setDelegate:self];
     
     // Create the view
     //view = [[HypnosisView alloc] initWithFrame:wholeWindow];
     view = [[HypnosisView alloc] initWithFrame:reallyBigRect];
     [view setBackgroundColor:[UIColor clearColor]];
     [scrollView addSubview:view];
+    
+    // Hide the status bar
+    // Can also do it without waiting for app to launch the view
+    // with key/value info.plist: Status bar is initially hidden = YES
+    [[UIApplication sharedApplication] setStatusBarHidden:YES
+                                            withAnimation:UIStatusBarAnimationFade];
     
     return YES;
 }
@@ -81,6 +87,8 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+//  implement the delegate method viewForZoomingInScrollView: that tells the
+// scroll view which view to transform
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return view;
